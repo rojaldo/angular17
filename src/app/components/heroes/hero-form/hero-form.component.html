@@ -1,0 +1,28 @@
+<div class="mb-3">
+    <label for="" class="form-label">Hero Name</label>
+    <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder=""
+        [(ngModel)]="heroName" />
+</div>
+<div class="mb-3">
+    <label for="" class="form-label">Hero Description</label>
+    <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder=""
+        [(ngModel)]="heroDescription" />
+</div>
+
+<button type="button" class="btn btn-primary mb-3" (click)="addHero()" [disabled]="heroName === ''">
+    Add Hero
+</button>
+
+<!-- @if (heroName !== '') {
+    <button type="button" class="btn btn-primary mb-3" (click)="addHero()">
+        Add Hero
+    </button>
+
+}@else {
+    <button type="button" class="btn btn-primary mb-3" disabled>
+        Add Hero
+    </button>} -->
+
+<!-- <button type="button" class="btn btn-primary mb-3" (click)="addHero()" *ngIf="heroName !== ''">
+    Add Hero
+</button> -->
