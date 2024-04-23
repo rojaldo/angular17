@@ -1,2 +1,18 @@
 
-<app-calculator></app-calculator>
+<ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+	<li [ngbNavItem]="1">
+		<button ngbNavLink>Calculator</button>
+		<ng-template ngbNavContent>
+         <app-calculator></app-calculator>
+		</ng-template>
+	</li>
+	<li [ngbNavItem]="2">
+		<button ngbNavLink>Heroes</button>
+		<ng-template ngbNavContent>
+         <app-heroes></app-heroes>
+		</ng-template>
+	</li>
+</ul>
+
+<div [ngbNavOutlet]="nav" class="mt-2"></div>
+
