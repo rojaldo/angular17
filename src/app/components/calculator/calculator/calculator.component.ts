@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { CalculatorService } from '../../../services/calculator.service';
+import { DisplayComponent } from "../display/display.component";
+import { KeyboardComponent } from '../keyboard/keyboard.component';
 
 
 @Component({
-  selector: 'app-calculator',
-  standalone: true,
-  imports: [],
-  templateUrl: './calculator.component.html',
-  styleUrl: './calculator.component.scss'
+    selector: 'app-calculator',
+    standalone: true,
+    templateUrl: './calculator.component.html',
+    styleUrl: './calculator.component.scss',
+    imports: [DisplayComponent, KeyboardComponent]
 })
 export class CalculatorComponent {
 
