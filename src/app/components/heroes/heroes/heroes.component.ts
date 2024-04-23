@@ -26,4 +26,7 @@ export class HeroesComponent {
       this.heroDescription = ''
     }
   }
+  deleteHero(index: number) {
+    this.heroes.splice(index, 1)
+  }
 }
