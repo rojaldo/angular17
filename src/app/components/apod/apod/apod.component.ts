@@ -5,32 +5,31 @@ import { NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { YouTubePlayer } from '@angular/youtube-player';
 import { Apod } from '../../../models/apod';
+import { ApodInfoComponent } from "../apod-info/apod-info.component";
+import { ApodDatePickerComponent } from '../apod-date-picker/apod-date-picker.component';
 
 @Component({
-  selector: 'app-apod',
-  standalone: true,
-  imports: [JsonPipe, NgbDatepickerModule, FormsModule, YouTubePlayer],
-  templateUrl: './apod.component.html',
-  styleUrl: './apod.component.scss'
+    selector: 'app-apod',
+    standalone: true,
+    templateUrl: './apod.component.html',
+    styleUrl: './apod.component.scss',
+    imports: [JsonPipe, ApodInfoComponent, ApodDatePickerComponent]
 })
 export class ApodComponent implements OnInit{
 
   apod: Apod = new Apod()
 
+  dateStr = `${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`
+
   model: any = {}
 
-  constructor(private service: ApodService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.service.getApod()
-    this.service.apod$.subscribe((data: any) => this.apod = data)
   }
 
-  handleDateSelect(value: any){
-    console.log(value);
-    let dateStr = `${value.year}-${value.month}-${value.day}`
-    this.service.getApod(dateStr)
-    
+  handleDateSelected(value: string){
+    this.dateStr = value    
   }
 
 }

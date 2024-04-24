@@ -1,0 +1,17 @@
+<div class="row align-items-md-stretch">
+    <div class="col-md-12">
+        <div
+            class="h-100 p-5 bg-light border rounded-3"
+        >
+            <h2>{{info.title}}</h2>
+            @if (info.isImage) {
+                <img [src]="info.url" [alt]="info.title">
+            } @else if (info.isVideo) {
+                <youtube-player [videoId]="info.videoID"/>
+            }
+            <p>
+                {{info.explanation}}
+            </p>
+        </div>
+    </div>
+</div>
