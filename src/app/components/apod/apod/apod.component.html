@@ -1,12 +1,17 @@
 <div class="container">
     <ngb-datepicker #dp [(ngModel)]="model" (dateSelect)="handleDateSelect($event)" />
+    
     <div class="row align-items-md-stretch">
         <div class="col-md-12">
             <div
                 class="h-100 p-5 bg-light border rounded-3"
             >
                 <h2>{{apod.title}}</h2>
-                <img [src]="apod.url" [alt]="apod.title">
+                @if (apod.isImage) {
+                    <img [src]="apod.url" [alt]="apod.title">
+                } @else if (apod.isVideo) {
+                    <youtube-player [videoId]="apod.videoID"/>
+                }
                 <p>
                     {{apod.explanation}}
                 </p>
