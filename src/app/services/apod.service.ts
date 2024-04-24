@@ -12,10 +12,11 @@ export class ApodService {
 
   constructor(private http: HttpClient) { }
 
-  getApod() {
+  getApod(dateStr?: string) {
     let url = 'https://api.nasa.gov/planetary/apod'
     const apiKey = 'WRONG_API_KEY'
     url = `${url}?api_key=${apiKey}`
+    dateStr ? url = `${url}&date=${dateStr}` : null
     const observer = {
       next: (data: any) => {
         this._apod = data
