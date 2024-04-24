@@ -5,14 +5,15 @@ import { RouterOutlet } from '@angular/router';
 import { CalculatorComponent } from './components/calculator/calculator/calculator.component';
 import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeroesComponent } from './components/heroes/heroes/heroes.component';
+import { ApodComponent } from "./components/apod/apod/apod.component";
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, CalculatorComponent, NgbNavModule, HeroesComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+    selector: 'app-root',
+    standalone: true,
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss',
+    imports: [RouterOutlet, CalculatorComponent, NgbNavModule, HeroesComponent, ApodComponent]
 })
 export class AppComponent {
-  active = 2
+  active = 3
 }
