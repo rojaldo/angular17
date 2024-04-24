@@ -17,19 +17,20 @@ export class ApodService {
     let url = 'https://api.nasa.gov/planetary/apod'
     const apiKey = 'WRONG_API_KEY'
     url = `${url}?api_key=${apiKey}`
-    dateStr ? url = `${url}&date=${dateStr}` : null
-    const observer = {
-      next: (data: any) => {
-        this._apod = new Apod(data)
+    dateStr ? url = `${url}&date=${dateStr}` : null;
+    const myObserver = {
+      next: (x: any) => {
+        this._apod = new Apod(x)
         this.apod$.next(this._apod)
       },
-      error: (error: any) => {
-        console.error('Error fetching APOD', error)
-      },
-      complete: () => {
-        console.log('APOD fetched successfully')
-      }
+      error: (err: any) => console.error('Observer got an error: ' + err),
+      complete: () => console.log('Observer got a complete notification'),
     }
-    this.http.get(url).subscribe(observer)  
+    if (this._apod.date === dateStr) {
+      console.log('APOD already fetched')
+    }
+    else {
+      this.http.get(url).subscribe(myObserver)
+    }
   }
 }
