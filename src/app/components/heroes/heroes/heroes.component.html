@@ -1,6 +1,6 @@
 <div class="container">
 <app-hero-form (onAddHero)="addHero($event)"></app-hero-form>
 
-<app-heroes-list [myHeroes]="heroes"></app-heroes-list>
+<app-heroes-list [myHeroes]="heroes" (onDeleteHero)="deleteHero($event)"></app-heroes-list>
 
 </div>
