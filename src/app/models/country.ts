@@ -2,7 +2,7 @@ export class Country {
     private _commonName: string = ''
     private _officialName: string = ''
     private _flag: string = ''
-    private _flags: string[] = []
+    private _flags: any = {}
     private _area: number = 0
     private _population: number = 0
     private _capitals: string[] = []
@@ -29,6 +29,8 @@ export class Country {
             this._subregion = json.subregion
             this._languages = json.languages
             this._currencies = json.currencies
+            console.log(this.flagPNG)
+            
 
         }
     }
@@ -45,7 +47,7 @@ export class Country {
         return this._flag
     }
 
-    get flags(): string[] {
+    get flags(): Object {
         return this._flags
     }
 
@@ -90,11 +92,11 @@ export class Country {
     }
 
     get flagSVG(): string {
-        return this._flag
+        return this._flags['svg']
     }
 
     get flagPNG(): string {
-        return this._flag
+        return this._flags['png']
     }
 
 }
