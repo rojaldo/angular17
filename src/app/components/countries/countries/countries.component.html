@@ -1,5 +1,5 @@
 <div class="container">
-    <div ngbDropdown class="d-inline-block">
+    <ngx-slider [(value)]="value" [(highValue)]="highValue" [options]="options"></ngx-slider>    <div ngbDropdown class="d-inline-block">
         <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
             Toggle dropdown
         </button>
@@ -14,7 +14,7 @@
         </div>
     </div>
     <div class="row justify-content-center align-items-center g-2 mt-2">
-        @for (country of countries | orderCountries : oc : o ; track $index) {
+        @for (country of countries | filterByPopulation : value : highValue | orderCountries : oc : o ; track $index) {
         <div class="col-xs-12 col-md-6 col-lg-4">
             <div class="card">
                 <!-- <img class="card-img-top" src="holder.js/100x180/" alt="Title" /> -->

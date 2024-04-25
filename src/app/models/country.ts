@@ -29,7 +29,7 @@ export class Country {
             this._subregion = json.subregion
             this._languages = json.languages
             this._currencies = json.currencies
-            
+
         }
     }
 

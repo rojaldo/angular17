@@ -6,15 +6,24 @@ import { Km2Pipe } from "../../../pipes/km2.pipe";
 import { OrderCountriesPipe } from "../../../pipes/order-countries.pipe";
 import { Order, OrderCountries } from '../../../enum/enum';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxSliderModule, Options } from '@angular-slider/ngx-slider';
+import { FilterByPopulationPipe } from '../../../pipes/filter-by-population.pipe';
 
 @Component({
     selector: 'app-countries',
     standalone: true,
     templateUrl: './countries.component.html',
     styleUrl: './countries.component.scss',
-    imports: [JsonPipe, Km2Pipe, OrderCountriesPipe, NgbDropdownModule]
+    imports: [JsonPipe, Km2Pipe, OrderCountriesPipe, NgbDropdownModule, NgxSliderModule, FilterByPopulationPipe]
 })
 export class CountriesComponent implements OnInit {
+
+  value: number = 40000000;
+  highValue: number = 60000000;
+  options: Options = {
+    floor: 0,
+    ceil: 1500000000
+  };
 
   countries: Country[] = [];
 
