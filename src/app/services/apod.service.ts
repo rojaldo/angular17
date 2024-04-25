@@ -15,7 +15,7 @@ export class ApodService {
 
   getApod(dateStr?: string) {
     let url = 'https://api.nasa.gov/planetary/apod'
-    const apiKey = 'WRONG_API_KEY'
+    const apiKey = 'DEMO_KEY'
     url = `${url}?api_key=${apiKey}`
     dateStr ? url = `${url}&date=${dateStr}` : null;
     const myObserver = {

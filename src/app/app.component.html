@@ -1,24 +1,28 @@
-
 <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
 	<li [ngbNavItem]="1">
 		<button ngbNavLink>Calculator</button>
 		<ng-template ngbNavContent>
-         <app-calculator></app-calculator>
+			<app-calculator></app-calculator>
 		</ng-template>
 	</li>
 	<li [ngbNavItem]="2">
 		<button ngbNavLink>Heroes</button>
 		<ng-template ngbNavContent>
-         <app-heroes></app-heroes>
+			<app-heroes></app-heroes>
 		</ng-template>
 	</li>
 	<li [ngbNavItem]="3">
 		<button ngbNavLink>Apod</button>
 		<ng-template ngbNavContent>
-         <app-apod></app-apod>
+			<app-apod></app-apod>
+		</ng-template>
+	</li>
+	<li [ngbNavItem]="4">
+		<button ngbNavLink>Countries</button>
+		<ng-template ngbNavContent>
+			<app-countries></app-countries>
 		</ng-template>
 	</li>
 </ul>
 
 <div [ngbNavOutlet]="nav" class="mt-2"></div>
-
