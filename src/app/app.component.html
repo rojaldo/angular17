@@ -23,6 +23,12 @@
 			<app-countries></app-countries>
 		</ng-template>
 	</li>
+	<li [ngbNavItem]="5">
+		<button ngbNavLink>Fun with Flags</button>
+		<ng-template ngbNavContent>
+			<app-fun-with-flags></app-fun-with-flags>
+		</ng-template>
+	</li>
 </ul>
 
 <div [ngbNavOutlet]="nav" class="mt-2"></div>

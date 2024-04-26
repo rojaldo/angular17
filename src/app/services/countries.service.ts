@@ -9,7 +9,9 @@ import { Country } from '../models/country';
 export class CountriesService {
 
   private _countries: Country[] = [];
-  countries$ = new BehaviorSubject<any[]>(this._countries);
+  countries$ = new BehaviorSubject<Country[]>(this._countries);
+
+  randomCountries$ = new BehaviorSubject<Country[]>([]);
 
   constructor(private http:HttpClient) { }
 
@@ -22,5 +24,12 @@ export class CountriesService {
       error: (error: any) => console.log(error)
     }
     this.http.get('https://restcountries.com/v3.1/all').subscribe(observer);
+  }
+
+  // get 4 different random countries
+  getFourRandomCountries(): void{
+    this.randomCountries$.next(this._countries.sort(() => Math.random() - Math.random()).slice(0, 4));
+
+
   }
 }
