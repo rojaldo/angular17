@@ -8,14 +8,15 @@ import { HeroesComponent } from './components/heroes/heroes/heroes.component';
 import { ApodComponent } from "./components/apod/apod/apod.component";
 import { CountriesComponent } from './components/countries/countries/countries.component';
 import { FunWithFlagsComponent } from "./components/countries/fun-with-flags/fun-with-flags.component";
+import { TrivialComponent } from './components/trivial/trivial/trivial.component';
 
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
-    imports: [RouterOutlet, CalculatorComponent, NgbNavModule, HeroesComponent, ApodComponent, CountriesComponent, FunWithFlagsComponent]
+    imports: [RouterOutlet, CalculatorComponent, NgbNavModule, HeroesComponent, ApodComponent, CountriesComponent, FunWithFlagsComponent, TrivialComponent]
 })
 export class AppComponent {
-  active = 5
+  active = 6
 }
