@@ -11,6 +11,7 @@ import { FunWithFlagsComponent } from "./components/countries/fun-with-flags/fun
 import { TrivialComponent } from './components/trivial/trivial/trivial.component';
 import { TrivialService } from './services/trivial.service';
 import { TemplateFormComponent } from "./components/forms/template-form/template-form.component";
+import { ReactiveFormComponent } from "./components/forms/reactive-form/reactive-form.component";
 
 @Component({
     selector: 'app-root',
@@ -18,7 +19,7 @@ import { TemplateFormComponent } from "./components/forms/template-form/template
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
     providers: [TrivialService],
-    imports: [RouterOutlet, CalculatorComponent, NgbNavModule, HeroesComponent, ApodComponent, CountriesComponent, FunWithFlagsComponent, TrivialComponent, TemplateFormComponent]
+    imports: [RouterOutlet, CalculatorComponent, NgbNavModule, HeroesComponent, ApodComponent, CountriesComponent, FunWithFlagsComponent, TrivialComponent, TemplateFormComponent, ReactiveFormComponent]
 })
 export class AppComponent {
   active = 7

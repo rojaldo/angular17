@@ -1,0 +1,18 @@
+<div
+    class="container"
+>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <label>First Name:
+        <input type="text" formControlName="name">
+    </label>
+    <label>Tow:
+        <input type="text" formControlName="town">
+    </label>
+    <label>Postal Code:
+        <input type="text" formControlName="postalCode">
+    </label>
+
+    <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+</form>
+
+</div>

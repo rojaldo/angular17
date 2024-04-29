@@ -9,10 +9,41 @@
         </div>
 
         <div class="form-group">
-            <label for="alterEgo">Alter Ego</label>
-            <input type="text" class="form-control" id="alterEgo" [(ngModel)]="model.description" name="description">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" [(ngModel)]="model.email" name="email" #email="ngModel" required [pattern]="emailPattern">
+            <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
+                Valid email is required
+            </div>
         </div>
 
+        <div class="form-group">
+            <label for="telephone">Telephone</label>
+            <input type="tel" class="form-control" id="telephone" [(ngModel)]="model.phone" name="phone" #phone="ngModel" required [pattern]="phonePattern" >
+            <div [hidden]="phone.valid || phone.pristine" class="alert alert-danger">
+                Valid phone is required
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="town">Town</label>
+            <input type="text" class="form-control" id="town" [(ngModel)]="model.town" name="town" #town="ngModel" required [pattern]="townPattern" (keyup)="handleTown(town.value)" >
+            <div [hidden]="town.valid || town.pristine" class="alert alert-danger">
+                Valid phone is required
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="postalCode">Postalcode</label>
+            <input type="text" class="form-control" id="postalCode" [(ngModel)]="model.postalCode" name="postalCode" #postalCode="ngModel" required [pattern]="postalCodePattern" >
+            <div [hidden]="postalCode.valid || postalCode.pristine" class="alert alert-danger">
+                Valid postalCode is required
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="birthDate">Birth date</label>
+            <input type="date" class="form-control" id="birthDate" [(ngModel)]="model.birthDate" name="birthDate" #birthDate="ngModel" required [pattern]="birthDatePattern" >
+            <div [hidden]="birthDate.valid || birthDate.pristine" class="alert alert-danger">
+                Valid birthDate is required
+            </div>
+        </div>
         <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
         <button type="button" class="btn btn-default" (click)="newHero(); heroForm.reset()">New Hero</button>
     </form>
