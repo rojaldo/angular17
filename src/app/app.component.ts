@@ -1,7 +1,7 @@
 
 
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { CalculatorComponent } from './components/calculator/calculator/calculator.component';
 import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeroesComponent } from './components/heroes/heroes/heroes.component';
@@ -19,7 +19,7 @@ import { ReactiveFormComponent } from "./components/forms/reactive-form/reactive
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
     providers: [TrivialService],
-    imports: [RouterOutlet, CalculatorComponent, NgbNavModule, HeroesComponent, ApodComponent, CountriesComponent, FunWithFlagsComponent, TrivialComponent, TemplateFormComponent, ReactiveFormComponent]
+    imports: [RouterOutlet, RouterModule, CalculatorComponent, NgbNavModule, HeroesComponent, ApodComponent, CountriesComponent, FunWithFlagsComponent, TrivialComponent, TemplateFormComponent, ReactiveFormComponent]
 })
 export class AppComponent {
   active = 7

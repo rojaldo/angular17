@@ -1,46 +1,41 @@
-<ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
-	<li [ngbNavItem]="1">
-		<button ngbNavLink>Calculator</button>
-		<ng-template ngbNavContent>
-			<app-calculator></app-calculator>
-		</ng-template>
-	</li>
-	<li [ngbNavItem]="2">
-		<button ngbNavLink>Heroes</button>
-		<ng-template ngbNavContent>
-			<app-heroes></app-heroes>
-		</ng-template>
-	</li>
-	<li [ngbNavItem]="3">
-		<button ngbNavLink>Apod</button>
-		<ng-template ngbNavContent>
-			<app-apod></app-apod>
-		</ng-template>
-	</li>
-	<li [ngbNavItem]="4">
-		<button ngbNavLink>Countries</button>
-		<ng-template ngbNavContent>
-			<app-countries></app-countries>
-		</ng-template>
-	</li>
-	<li [ngbNavItem]="5">
-		<button ngbNavLink>Fun with Flags</button>
-		<ng-template ngbNavContent>
-			<app-fun-with-flags></app-fun-with-flags>
-		</ng-template>
-	</li>
-	<li [ngbNavItem]="6">
-		<button ngbNavLink>Trivial</button>
-		<ng-template ngbNavContent>
-			<app-trivial></app-trivial>
-		</ng-template>
-	</li>
-	<li [ngbNavItem]="7">
-		<button ngbNavLink>Forms</button>
-		<ng-template ngbNavContent>
-			<app-reactive-form></app-reactive-form>
-		</ng-template>
-	</li>
-</ul>
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+	<div class="container">
+		<a class="navbar-brand" href="#">Angular</a>
+		<button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+			data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="collapsibleNavId">
+			<ul class="navbar-nav me-auto mt-2 mt-lg-0">
+				<li class="nav-item">
+					<a class="nav-link active" routerLink="/calculator" routerLinkActive="active" aria-current="page">Calculator</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active" routerLink="/heroes" routerLinkActive="active" aria-current="page">Heroes</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active" routerLink="/apod" routerLinkActive="active" aria-current="page">Apod</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active" routerLink="/countries" routerLinkActive="active" aria-current="page">Countries</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active" routerLink="/fun-with-flags" routerLinkActive="active" aria-current="page"> Fun with Flags</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active" routerLink="/trivial" routerLinkActive="active" aria-current="page">Trivial Game</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active" routerLink="/template-form" routerLinkActive="active" aria-current="page">Template Form</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active" routerLink="/reactive-form" routerLinkActive="active" aria-current="page">Reactive Form</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
 
-<div [ngbNavOutlet]="nav" class="mt-2"></div>
+<!-- The routed views render in the <router-outlet>-->
+<router-outlet></router-outlet>
