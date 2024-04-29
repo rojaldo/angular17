@@ -1,20 +1,26 @@
 <div class="container">
-    <ngx-slider [(value)]="value" [(highValue)]="highValue" [options]="options"></ngx-slider>    <div ngbDropdown class="d-inline-block">
+    <label for="typeahead-basic">Search for a state:</label>
+    <input id="typeahead-basic" type="text" class="form-control" [(ngModel)]="countryName" [ngbTypeahead]="search" />
+
+    <ngx-slider [(value)]="value" [(highValue)]="highValue" [options]="options"></ngx-slider>
+    <div ngbDropdown class="d-inline-block">
         <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
             Toggle dropdown
         </button>
         <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
             <button ngbDropdownItem (click)="handleSelection(orderCountries.Name, order.Asc)">Name - Asc</button>
             <button ngbDropdownItem (click)="handleSelection(orderCountries.Name, order.Desc)">Name - Desc</button>
-            <button ngbDropdownItem (click)="handleSelection(orderCountries.Population, order.Asc)">Population - Asc</button>
-            <button ngbDropdownItem (click)="handleSelection(orderCountries.Population, order.Desc)">Population - Desc</button>
+            <button ngbDropdownItem (click)="handleSelection(orderCountries.Population, order.Asc)">Population -
+                Asc</button>
+            <button ngbDropdownItem (click)="handleSelection(orderCountries.Population, order.Desc)">Population -
+                Desc</button>
             <button ngbDropdownItem (click)="handleSelection(orderCountries.Area, order.Asc)">Area - Asc</button>
             <button ngbDropdownItem (click)="handleSelection(orderCountries.Area, order.Desc)">Area - Desc</button>
-            
+
         </div>
     </div>
     <div class="row justify-content-center align-items-center g-2 mt-2">
-        @for (country of countries | filterByPopulation : value : highValue | orderCountries : oc : o ; track $index) {
+        @for (country of countries |filterByName : countryName | filterByPopulation : value : highValue | orderCountries : oc : o ; track $index) {
         <div class="col-xs-12 col-md-6 col-lg-4">
             <div class="card">
                 <!-- <img class="card-img-top" src="holder.js/100x180/" alt="Title" /> -->

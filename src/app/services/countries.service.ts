@@ -10,6 +10,7 @@ export class CountriesService {
 
   private _countries: Country[] = [];
   countries$ = new BehaviorSubject<Country[]>(this._countries);
+  countryNames: string[] = [];
 
   randomCountries$ = new BehaviorSubject<Country[]>([]);
 
@@ -19,6 +20,7 @@ export class CountriesService {
     const observer = {
       next: (response: any) => {
         this._countries = response.map((json: any) => new Country(json));
+        this.countryNames = this._countries.map((country: Country) => country.commonName);
         this.countries$.next(this._countries);
       },
       error: (error: any) => console.log(error)
