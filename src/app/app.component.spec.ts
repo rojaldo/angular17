@@ -17,7 +17,7 @@ describe('AppComponent', () => {
   it(`should have the 'ng17' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('ng17');
+    expect(app.active).toEqual(6);
   });
 
   it('should render title', () => {

@@ -10,6 +10,7 @@ import { HeroesService } from '../../../services/heroes.service';
   selector: 'app-heroes',
   standalone: true,
   imports: [FormsModule, NgFor, JsonPipe, NgIf, HeroFormComponent, HeroesListComponent],
+  providers: [HeroesService],
   templateUrl: './heroes.component.html',
   styleUrl: './heroes.component.scss'
 })

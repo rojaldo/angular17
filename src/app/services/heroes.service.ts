@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 import { Hero } from '../models/hero';
 import { BehaviorSubject } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class HeroesService {
 
   private _heroes: Hero[] = [ new Hero('Superman', 'man of steel'), new Hero('Batman', 'dark knight') ]

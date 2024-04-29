@@ -9,6 +9,8 @@
 		<button ngbNavLink>Heroes</button>
 		<ng-template ngbNavContent>
 			<app-heroes></app-heroes>
+			<hr/>
+			<app-heroes></app-heroes>
 		</ng-template>
 	</li>
 	<li [ngbNavItem]="3">
@@ -33,6 +35,12 @@
 		<button ngbNavLink>Trivial</button>
 		<ng-template ngbNavContent>
 			<app-trivial></app-trivial>
+		</ng-template>
+	</li>
+	<li [ngbNavItem]="7">
+		<button ngbNavLink>Forms</button>
+		<ng-template ngbNavContent>
+			<app-template-form></app-template-form>
 		</ng-template>
 	</li>
 </ul>

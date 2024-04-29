@@ -1,0 +1,10 @@
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title" [innerHTML]="card.question"></h5>
+        <div class="d-grid gap-2">
+            @for (answer of card.answers; track $index) {
+            <button [class]="buttonsClasses[$index]" type="button" [innerHTML]="answer" (click)="handleClick(answer,$index)" [disabled]="card.responded===true"></button>
+            }
+        </div>
+    </div>
+</div>

@@ -6,6 +6,9 @@ export class TrivialCard {
     private _correctAnswer: string = ''
     private _incorrectAnswers: string[] = []
     private _answers: string[] = []
+    private _responded = false
+    private _userAnswer: string = ''
+    private _indexAnswer: number = -1
     constructor(json?: any) {
         if(json) {
             this._category = json.category
@@ -46,4 +49,27 @@ export class TrivialCard {
         return this._answers
     }
 
+    get responded(): boolean {
+        return this._responded
+    }
+
+    set responded(value: boolean) {
+        this._responded = value
+    }
+
+    get userAnswer(): string {
+        return this._userAnswer
+    }
+
+    set userAnswer(value: string) {
+        this._userAnswer = value
+    }
+
+    get indexAnswer(): number {
+        return this._indexAnswer
+    }   
+
+    set indexAnswer(value: number) {
+        this._indexAnswer = value
+    }
 }
